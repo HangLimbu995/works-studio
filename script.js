@@ -23,12 +23,24 @@ window.addEventListener('DOMContentLoaded', () => {
             ease: 'power1.out',
         })
     }
+
+
+    loading()
+
     const scroll = new LocomotiveScroll({
         el: document.querySelector('#main'),
         smooth: true,
     })
 
-    loading()
+    // GO TO TOP button
+
+    var goToTop = document.querySelector('#ft')
+
+    goToTop.addEventListener('click', () => {
+        console.log('go to top')
+        scroll.scrollTo(0)
+    })
+
 
     // FOR PROJECT EFFECTS JS
 
@@ -74,4 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
         projects.style.backgroundImage = `url(${img})`;
     }
     projectBackgroundImg(projectArray[0].getAttribute('data-img'));
+
+
+
 })
